@@ -1,0 +1,83 @@
+[
+  {
+    "id": "the-north",
+    "name": "The North",
+    "climate": "Harsh subarctic winters, brief summers; permafrost dominates the deep north",
+    "description": "The largest of the Seven Kingdoms by land area and the least forgiving by temperament. North of the Neck stretches a continent of ancient pines, frozen lakes, and skies that turn dark for months at a time. The North breeds a particular kind of human — one who does not complain about hardship because hardship is simply Tuesday. Castle Black and the Wall mark the edge of the known world; beyond lies something older than kingdoms, older than memory.",
+    "accentColor": "#4a90d9",
+    "majorHouses": ["House Stark", "House Bolton (extinct)", "House Mormont", "House Umber", "House Karstark"],
+    "notableLocations": ["Winterfell", "The Wall", "Castle Black", "The Last Hearth", "Bear Island", "White Harbor", "Hardhome"]
+  },
+  {
+    "id": "kings-landing",
+    "name": "King's Landing",
+    "climate": "Temperate maritime; warm summers, mild winters, persistent sea winds",
+    "description": "The capital of the Seven Kingdoms squats on the banks of the Blackwater Rush where it meets Blackwater Bay, a city of half a million souls crammed behind walls that were built for a far smaller population. Its streets smell of salt, sewage, and ambition. The Red Keep crowns Aegon's Hill like a scar, and the Iron Throne within it has been the most expensive seat in Westeros — paid for in blood by every generation that coveted it.",
+    "accentColor": "#c9a84c",
+    "majorHouses": ["House Baratheon", "House Lannister", "House Targaryen"],
+    "notableLocations": ["The Red Keep", "The Iron Throne", "Great Sept of Baelor", "Blackwater Bay", "Flea Bottom", "Dragonpit", "Fishmonger's Square"]
+  },
+  {
+    "id": "the-reach",
+    "name": "The Reach",
+    "climate": "Fertile temperate; long growing seasons, ample rainfall, mild winters",
+    "description": "The breadbasket of Westeros, where the land itself seems to have decided to be generous. The Reach produces more food than any other region, its golden fields stretching in every direction from the towers of Highgarden. It is the most populous region, the wealthiest after the Westerlands, and its lords have the dangerous habit of confusing comfort with security.",
+    "accentColor": "#4a8c3a",
+    "majorHouses": ["House Tyrell (extinct)", "House Tarly", "House Florent", "House Hightower"],
+    "notableLocations": ["Highgarden", "Oldtown", "Horn Hill", "The Citadel", "Brightwater Keep", "Goldengrove"]
+  },
+  {
+    "id": "dorne",
+    "name": "Dorne",
+    "climate": "Hot and arid; desert interior, more temperate coastline, year-round warmth",
+    "description": "The southernmost kingdom is also the most singular — in culture, law, and temperament. Dorne practices equal inheritance regardless of gender, permits bastard children greater dignity than the rest of the realm, and produces a people who have historically been impossible to conquer. The sun beats down on red sand mountains and bone-dry riverbeds, and the Dornish have absorbed that heat into their character — passionate, stubborn, and capable of carrying a grievance for decades without forgetting a single detail.",
+    "accentColor": "#d4721a",
+    "majorHouses": ["House Martell", "House Yronwood", "House Dayne", "House Uller"],
+    "notableLocations": ["Sunspear", "The Water Gardens", "Hellholt", "Starfall", "Yronwood", "The Red Mountains"]
+  },
+  {
+    "id": "the-vale",
+    "name": "The Vale of Arryn",
+    "climate": "Alpine; cold mountain winters, cool summers, heavy snow at elevation",
+    "description": "The Vale is defended by the most effective fortification in the known world — the mountains themselves. The Giant's Lance and its surrounding peaks have protected the Vale from every invasion in its history, with the Bloody Gate serving as the one passage through. Tucked behind these natural walls, the Vale has enjoyed a prosperity and insularity that has made its lords both secure and, perhaps, slightly detached from the realities afflicting the rest of the realm.",
+    "accentColor": "#5a8ac0",
+    "majorHouses": ["House Arryn", "House Royce", "House Corbray", "House Baelish"],
+    "notableLocations": ["The Eyrie", "Gulltown", "The Bloody Gate", "Heart's Home", "Runestone", "The Gates of the Moon"]
+  },
+  {
+    "id": "iron-islands",
+    "name": "The Iron Islands",
+    "climate": "Cold maritime; perpetually storm-lashed, salt spray and grey skies, rarely warm",
+    "description": "Seven wind-scoured islands in Ironman's Bay, where the sea has stripped everything down to the essential. The ironborn who survive here develop the same quality — stripped of softness, forged in salt water and storm. Their culture celebrates what they call the Old Way: taking what others build, reaving what others harvest, worshipping a god who dwells in drowning. A people defined entirely by what they are willing to do to survive.",
+    "accentColor": "#607080",
+    "majorHouses": ["House Greyjoy", "House Harlaw", "House Botley", "House Goodbrother"],
+    "notableLocations": ["Pyke", "Old Wyk", "Great Wyk", "Lordsport", "Ten Towers", "Hammerhorn"]
+  },
+  {
+    "id": "the-riverlands",
+    "name": "The Riverlands",
+    "climate": "Temperate continental; fertile floodplains, river mists, variable seasons",
+    "description": "The crossroads of Westeros in every sense — geographically, politically, and militarily. Every army that marches between north and south must cross the Riverlands, and the rivers that give the region its name have also given it its history: a thousand years of being marched across, fought over, burned, rebuilt, and marched across again. Riverrun stands at the confluence of the Tumblestone and Red Fork, a castle that has absorbed more war than any other.",
+    "accentColor": "#3a7fa0",
+    "majorHouses": ["House Tully", "House Frey (extinct)", "House Bracken", "House Blackwood"],
+    "notableLocations": ["Riverrun", "The Twins", "Harrenhal", "Saltpans", "Acorn Hall", "Stone Hedge"]
+  },
+  {
+    "id": "the-stormlands",
+    "name": "The Stormlands",
+    "climate": "Maritime storm-prone; heavy rainfall, dramatic seasonal swings, coastal tempests",
+    "description": "Named for the ferocious storms that roll in from Shipbreaker Bay and the Narrow Sea, the Stormlands build men in the image of their weather — sudden, violent, and capable of surprising calm between the episodes of fury. Storm's End, the great castle of House Baratheon, has weathered every storm the gods have sent for eight thousand years. That durability is the Stormlands in architectural form.",
+    "accentColor": "#606878",
+    "majorHouses": ["House Baratheon (extinct)", "House Swann", "House Selmy", "House Estermont"],
+    "notableLocations": ["Storm's End", "Evenfall Hall", "Cape Wrath", "Summerhall", "Felwood"]
+  },
+  {
+    "id": "essos",
+    "name": "Essos",
+    "climate": "Varies dramatically: from the tundra of the far east to the tropical Jade Sea coast",
+    "description": "The great continent across the Narrow Sea, vast beyond Westerosi comprehension, cradle of civilizations that make the Seven Kingdoms look young and provisional. Essos contains the Free Cities — mercantile republics born from the ruins of old Valyria — the endless grass of the Dothraki Sea, the ancient slave cities of Slaver's Bay, and beyond them the mysteries of the far east that even the most traveled maesters know only from rumor.",
+    "accentColor": "#a06a30",
+    "majorHouses": ["House Targaryen (in exile)", "Various Magisters", "Dothraki Khals"],
+    "notableLocations": ["Braavos", "Pentos", "Meereen", "Astapor", "Yunkai", "Vaes Dothrak", "Volantis", "Qarth"]
+  }
+]

@@ -1,26 +1,258 @@
 @import "tailwindcss";
 
+/* ── Design Tokens ───────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --got-bg-obsidian:      #0a0a0f;
+  --got-bg-deep:          #0f0f1a;
+  --got-bg-surface:       #13131f;
+  --got-bg-elevated:      #1a1a2e;
+  --got-bg-card:          #16162a;
+
+  --got-gold:             #c9a84c;
+  --got-gold-bright:      #e8c96a;
+  --got-gold-dim:         #8a6f32;
+  --got-gold-glow:        rgba(201, 168, 76, 0.25);
+  --got-gold-glow-strong: rgba(201, 168, 76, 0.45);
+
+  --got-crimson:          #8b1a1a;
+  --got-crimson-bright:   #c0392b;
+  --got-crimson-glow:     rgba(139, 26, 26, 0.4);
+
+  --got-ice:              #4a90d9;
+  --got-ice-bright:       #7ab8f5;
+  --got-ice-glow:         rgba(74, 144, 217, 0.3);
+
+  --got-text-parchment:   #e8dcc8;
+  --got-text-muted:       #8a7d6a;
+  --got-text-dim:         #5a5048;
+  --got-text-gold:        #c9a84c;
+
+  --got-border:           rgba(201, 168, 76, 0.2);
+  --got-border-bright:    rgba(201, 168, 76, 0.6);
+  --got-border-subtle:    rgba(255, 255, 255, 0.06);
+
+  --got-shadow-gold:      0 0 20px rgba(201, 168, 76, 0.3), 0 0 40px rgba(201, 168, 76, 0.1);
+  --got-shadow-card:      0 4px 24px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4);
+
+  /* House Colors */
+  --got-stark-grey:       #708090;
+  --got-stark-white:      #dce3ea;
+  --got-lannister-red:    #8b1a1a;
+  --got-lannister-gold:   #c9a84c;
+  --got-targaryen-red:    #c0392b;
+  --got-targaryen-black:  #1a0505;
+  --got-baratheon-black:  #1a1a1a;
+  --got-baratheon-gold:   #d4af37;
+  --got-tyrell-green:     #2d5a27;
+  --got-tyrell-gold:      #b8962e;
+  --got-martell-orange:   #c0611a;
+  --got-martell-red:      #8b1a1a;
+  --got-tully-blue:       #1a3a6b;
+  --got-tully-red:        #8b1a1a;
+  --got-arryn-blue:       #1a3a8b;
+  --got-arryn-white:      #e8eaf0;
+  --got-greyjoy-grey:     #4a4a4a;
+  --got-greyjoy-gold:     #8a7432;
+  --got-bolton-pink:      #c0a0a0;
+  --got-bolton-red:       #6b0f0f;
+  --got-frey-grey:        #5a5a5a;
+  --got-frey-blue:        #1a2a5a;
 }
 
+/* ── Tailwind v4 Theme ───────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-got-obsidian:     var(--got-bg-obsidian);
+  --color-got-deep:         var(--got-bg-deep);
+  --color-got-surface:      var(--got-bg-surface);
+  --color-got-elevated:     var(--got-bg-elevated);
+  --color-got-card:         var(--got-bg-card);
+  --color-got-gold:         var(--got-gold);
+  --color-got-gold-bright:  var(--got-gold-bright);
+  --color-got-gold-dim:     var(--got-gold-dim);
+  --color-got-crimson:      var(--got-crimson);
+  --color-got-crimson-bright: var(--got-crimson-bright);
+  --color-got-ice:          var(--got-ice);
+  --color-got-ice-bright:   var(--got-ice-bright);
+  --color-got-parchment:    var(--got-text-parchment);
+  --color-got-muted:        var(--got-text-muted);
+  --color-got-dim:          var(--got-text-dim);
+
+  --font-cinzel-deco:  var(--font-cinzel-decorative);
+  --font-cinzel:       var(--font-cinzel);
+  --font-garamond:     var(--font-eb-garamond);
+  --font-cormorant:    var(--font-cormorant-sc);
+  --font-almendra:     var(--font-almendra);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--got-bg-obsidian);
+  color: var(--got-text-parchment);
+  font-family: var(--font-eb-garamond), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--got-bg-obsidian); }
+::-webkit-scrollbar-thumb { background: var(--got-gold-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--got-gold); }
+
+/* ── Font Utilities ──────────────────────────────────────────────── */
+.font-cinzel-deco  { font-family: var(--font-cinzel-decorative), serif; }
+.font-cinzel       { font-family: var(--font-cinzel), serif; }
+.font-garamond     { font-family: var(--font-eb-garamond), serif; }
+.font-cormorant    { font-family: var(--font-cormorant-sc), serif; }
+.font-almendra     { font-family: var(--font-almendra), serif; }
+
+/* ── Glow ────────────────────────────────────────────────────────── */
+.glow-gold         { text-shadow: 0 0 20px rgba(201, 168, 76, 0.6), 0 0 40px rgba(201, 168, 76, 0.3); }
+.glow-gold-subtle  { text-shadow: 0 0 12px rgba(201, 168, 76, 0.4); }
+.glow-ice          { text-shadow: 0 0 20px rgba(74, 144, 217, 0.6), 0 0 40px rgba(74, 144, 217, 0.3); }
+.glow-fire         { text-shadow: 0 0 20px rgba(192, 57, 43, 0.6), 0 0 40px rgba(255, 107, 53, 0.3); }
+
+.border-glow-gold  { box-shadow: 0 0 16px rgba(201, 168, 76, 0.25), inset 0 0 16px rgba(201, 168, 76, 0.05); }
+
+/* ── GOT Card ────────────────────────────────────────────────────── */
+.got-card {
+  background-color: var(--got-bg-card);
+  border: 1px solid var(--got-border);
+  box-shadow: var(--got-shadow-card);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.got-card:hover {
+  border-color: var(--got-border-bright);
+  transform: translateY(-4px);
+  box-shadow: var(--got-shadow-card), 0 0 24px rgba(201, 168, 76, 0.3);
+}
+
+/* ── Divider ─────────────────────────────────────────────────────── */
+.gold-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--got-gold) 30%, var(--got-gold) 70%, transparent);
+  position: relative;
+  margin: 0 auto;
+}
+
+/* ── Ember Particles ─────────────────────────────────────────────── */
+@keyframes ember-rise {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.9; }
+  100% { transform: translateY(-110vh) translateX(var(--drift, 20px)) scale(0.2); opacity: 0; }
+}
+
+.ember {
+  position: fixed;
+  bottom: -4px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffaa44, #ff4400);
+  pointer-events: none;
+  z-index: 2;
+  animation: ember-rise linear infinite;
+}
+
+/* ── Timeline ────────────────────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, var(--got-gold) 5%, var(--got-gold) 95%, transparent);
+}
+
+/* ── Status Badges ───────────────────────────────────────────────── */
+.status-alive   { color: #4caf50; background: rgba(76, 175, 80, 0.12); border-color: rgba(76, 175, 80, 0.35); }
+.status-dead    { color: #c0392b; background: rgba(192, 57, 43, 0.12); border-color: rgba(192, 57, 43, 0.35); }
+.status-unknown { color: var(--got-text-muted); background: rgba(138, 125, 106, 0.12); border-color: rgba(138, 125, 106, 0.35); }
+
+/* ── Selection ───────────────────────────────────────────────────── */
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: var(--got-text-parchment);
+}
+
+/* ── Count animation for stats ───────────────────────────────────── */
+@keyframes count-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Gold Button Variants ────────────────────────────────────────── */
+.gold-btn-outline {
+  border: 1px solid var(--got-gold);
+  color: var(--got-gold);
+  background: transparent;
+}
+.gold-btn-outline:hover {
+  background: var(--got-gold);
+  color: var(--got-bg-obsidian);
+}
+.gold-btn-filled {
+  background: var(--got-gold);
+  color: var(--got-bg-obsidian);
+  font-weight: 700;
+}
+.gold-btn-filled:hover {
+  background: var(--got-gold-bright);
+}
+
+/* ── Dragon Card hover ───────────────────────────────────────────── */
+.dragon-card-fire:hover {
+  border-color: rgba(192,57,43,0.6) !important;
+  box-shadow: 0 0 40px rgba(139,26,26,0.4), 0 4px 24px rgba(0,0,0,0.6);
+  transform: translateY(-4px);
+}
+.dragon-card-ice:hover {
+  border-color: rgba(74,144,217,0.6) !important;
+  box-shadow: 0 0 40px rgba(74,144,217,0.3), 0 4px 24px rgba(0,0,0,0.6);
+  transform: translateY(-4px);
+}
+
+/* ── Region Card hover ───────────────────────────────────────────── */
+.region-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* ── Timeline event card hover ───────────────────────────────────── */
+.timeline-event {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.timeline-event:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Nav link hover (CSS only) ───────────────────────────────────── */
+.nav-link:hover {
+  color: var(--got-text-parchment) !important;
+}
+
+/* ── House detail hover button ───────────────────────────────────── */
+.house-cta-btn {
+  border: 1px solid var(--got-gold);
+  color: var(--got-gold);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.house-cta-btn:hover {
+  background: var(--got-gold);
+  color: var(--got-bg-obsidian);
 }

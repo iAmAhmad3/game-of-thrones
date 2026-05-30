@@ -1,0 +1,68 @@
+[
+  {
+    "id": "drogon",
+    "name": "Drogon",
+    "rider": "Daenerys Targaryen",
+    "scaleColor": "Black with red highlights",
+    "size": "Colossal",
+    "status": "alive",
+    "variant": "fire",
+    "description": "Named for Khal Drogo, the husband Daenerys lost in Essos, Drogon is the largest and most ferocious of the three dragons hatched from the ancient petrified eggs in Drogo's funeral pyre. He is as black as the void between stars, his scales absorbing light the way a shadow absorbs everything around it. When Drogon breathes, the world turns orange and buildings unmake themselves. He is not merely a weapon — he is the embodiment of Targaryen power made physical, a creature of elemental will who chose Daenerys as his rider not because she commanded him but because she burned. He melted the Iron Throne after Daenerys fell, as if understanding what it had done to her, then flew east with her body and disappeared into a horizon no maester has yet charted.",
+    "keyMoments": ["Hatching from the pyre", "Sacking of Astapor", "Battle of the Goldroad", "Capture beyond the Wall", "Burning King's Landing", "Melting the Iron Throne"]
+  },
+  {
+    "id": "rhaegal",
+    "name": "Rhaegal",
+    "rider": "Jon Snow / Aegon Targaryen",
+    "scaleColor": "Green and bronze",
+    "size": "Very Large",
+    "status": "dead",
+    "variant": "fire",
+    "description": "Named for Prince Rhaegar Targaryen — whose death sparked Robert's Rebellion and whose secret marriage to Lyanna Stark created the very rider who would eventually bond with him. Rhaegal was green-scaled with flashes of bronze along his wings, his flame burning in a paler, more golden hue than Drogon's orange inferno. He carried Jon Snow on his back in the skies above the North, a moment of profound rightness: the dragon named for a father carrying the son who never knew him. Rhaegal's death came not from the Night King or another dragon but from a ballista bolt fired by Euron Greyjoy's fleet off the coast of Dragonstone — sudden, ordinary, and utterly brutal.",
+    "keyMoments": ["Hatching from the pyre", "Accepting Jon Snow as rider", "Battle of Winterfell (Night King)", "Death by ballista bolt near Dragonstone"]
+  },
+  {
+    "id": "viserion",
+    "name": "Viserion",
+    "rider": "Daenerys Targaryen / Night King",
+    "scaleColor": "Cream and gold / Blue-white (undead)",
+    "size": "Very Large",
+    "status": "dead",
+    "variant": "ice",
+    "description": "Named for Viserys Targaryen, the cruel brother who sold Daenerys to Khal Drogo for an army he never received. In life, Viserion was the cream-and-gold dragon, perhaps the most beautiful of the three, his scales shimmering like aged ivory in sunlight. He was kind as dragons can be kind, flying close to his brothers. Beyond the Wall, a Night King's ice spear took him from the sky, and Viserion sank beneath a frozen lake. When the Night King raised him — his eyes burning blue, his breath no longer fire but a torrent of freezing death — he destroyed the Wall that had stood for eight thousand years. He died when Arya Stark killed the Night King. His collapse was instantaneous.",
+    "keyMoments": ["Hatching from the pyre", "Killing by the Night King", "Resurrection as ice dragon", "Destroying the Wall at Eastwatch", "Collapse when the Night King dies"]
+  },
+  {
+    "id": "balerion",
+    "name": "Balerion the Black Dread",
+    "rider": "Aegon the Conqueror",
+    "scaleColor": "Black",
+    "size": "Titanic — the largest dragon in recorded history",
+    "status": "dead",
+    "variant": "fire",
+    "description": "There are no words large enough for Balerion the Black Dread. He was not a dragon. He was a god with wings. Born in Old Valyria before the Doom, Balerion carried Aegon the Conqueror on his back as he burned six kingdoms into submission, his shadow blotting out the sun over entire towns. The Iron Throne itself was forged in Balerion's black flame — a throne of melted swords that could only have been created by a creature whose fire exceeded what physics should permit. He lived for nearly two centuries, dying of old age during the reign of King Maekar I. His skull sits beneath the Red Keep, black and enormous as a cathedral — the most sobering reminder that something that great once walked the earth and may never walk it again.",
+    "keyMoments": ["Forging the Iron Throne", "Field of Fire — burning the last Gardener king", "Burning Harrenhal to glass", "Death of old age after 200 years"]
+  },
+  {
+    "id": "meraxes",
+    "name": "Meraxes",
+    "rider": "Visenya Targaryen",
+    "scaleColor": "Silver-grey",
+    "size": "Enormous",
+    "status": "dead",
+    "variant": "fire",
+    "description": "Meraxes was ridden by Visenya Targaryen, the elder and more formidable of Aegon's two sister-wives. A silver-grey dragon of tremendous size, Meraxes participated in the Conquest alongside Balerion and Vhagar, and later in the war to subjugate Dorne. It was in Dorne that Meraxes met her end — struck down by a scorpion bolt through the eye while fighting over the Hellholt. Visenya survived Meraxes's fall, or did not — the histories are unclear, as those who witnessed it could not agree on what they saw. The Dornish learned from that battle that dragons can die, and that knowledge shaped their entire resistance to Targaryen rule for the generations that followed.",
+    "keyMoments": ["Conquest of the Seven Kingdoms", "War against Dorne", "Death at the Hellholt — scorpion bolt through the eye"]
+  },
+  {
+    "id": "vhagar",
+    "name": "Vhagar",
+    "rider": "Rhaenys Targaryen, later Aemond Targaryen",
+    "scaleColor": "Bronze-green",
+    "size": "Immense (second only to Balerion)",
+    "status": "dead",
+    "variant": "fire",
+    "description": "The last of Aegon the Conqueror's original three dragons, Vhagar outlived both Balerion and Meraxes and grew larger than either except the Black Dread himself. By the time of the Dance of the Dragons, she was nearly as great as Balerion had been, her scales a deep bronze-green weathered by more than a century of sky. She was ridden by multiple Targaryens over her long life — Rhaenys the Queen Who Never Was first claimed her, and the one-eyed prince Aemond Targaryen reclaimed her when the Dance of the Dragons began. Vhagar and Aemond were killed above the Gods Eye lake by Daemon Targaryen riding Caraxes — a battle so ferocious that the dragon bones remain visible beneath the water to this day.",
+    "keyMoments": ["Conquest of the Seven Kingdoms", "Claimed by Aemond Targaryen during the Dance of the Dragons", "Death above the Gods Eye"]
+  }
+]
