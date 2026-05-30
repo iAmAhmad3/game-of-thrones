@@ -44,14 +44,14 @@ export function DragonCard({ dragon }: { dragon: Dragon }) {
         }}
       />
 
-      <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-start">
+      <div className="p-6 md:p-10 flex flex-col md:grid md:grid-cols-[1fr_auto] gap-6 md:gap-8 items-start">
         <div>
           {/* Name */}
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-5xl">{dragonEmojis[dragon.id] ?? "🐉"}</span>
+            <span className="text-4xl md:text-5xl">{dragonEmojis[dragon.id] ?? "🐉"}</span>
             <div>
               <h2
-                className={`font-cinzel-deco text-3xl md:text-4xl font-black leading-tight ${isIce ? "glow-ice" : "glow-fire"}`}
+                className={`font-cinzel-deco text-2xl md:text-4xl font-black leading-tight ${isIce ? "glow-ice" : "glow-fire"}`}
                 style={{ color: accentColor }}
               >
                 {dragon.name}
@@ -98,7 +98,7 @@ export function DragonCard({ dragon }: { dragon: Dragon }) {
 
         {/* Stats sidebar */}
         <div
-          className="rounded-lg p-6 min-w-[200px] space-y-5"
+          className="rounded-lg p-5 md:p-6 w-full md:min-w-[200px] md:w-auto space-y-4 md:space-y-5"
           style={{
             background: "rgba(0,0,0,0.3)",
             border: `1px solid ${isIce ? "rgba(74,144,217,0.2)" : "rgba(139,26,26,0.2)"}`,

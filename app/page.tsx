@@ -17,8 +17,8 @@ const pillars = [
 const spotlightHouse = housesData.find((h) => h.id === "stark")!;
 
 const stats = [
-  { value: 11, suffix: "", label: "Great Houses" },
-  { value: 50, suffix: "+", label: "Characters" },
+  { value: 17, suffix: "", label: "Great Houses" },
+  { value: 60, suffix: "+", label: "Characters" },
   { value: 8, suffix: "", label: "Seasons" },
   { value: 6, suffix: "", label: "Dragons" },
 ];
@@ -32,7 +32,7 @@ export default function Home() {
       {/* Pillar Cards */}
       <AnimatedSection delay={0.1}>
         <section className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {pillars.map(({ href, icon: Icon, label, desc }) => (
               <Link key={href} href={href} className="got-card group rounded-lg p-8 flex flex-col items-center text-center gap-5 cursor-pointer">
                 <div

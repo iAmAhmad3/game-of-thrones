@@ -10,6 +10,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 
 const cinzelDecorative = Cinzel_Decorative({
   variable: "--font-cinzel-decorative",
@@ -72,6 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fontVars} h-full`}>
       <body className="min-h-full flex flex-col bg-got-obsidian">
+        <ScrollProgressBar />
         <Navbar />
         <PageTransition>
           <main className="flex-1 relative z-10">{children}</main>

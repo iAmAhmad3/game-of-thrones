@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import housesData from "@/data/houses.json";
 import charactersData from "@/data/characters.json";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SnowParticles } from "@/components/SnowParticles";
 
 interface Props { params: Promise<{ id: string }> }
 
@@ -25,9 +26,13 @@ export default async function HouseDetailPage({ params }: Props) {
 
   const members = charactersData.filter((c) => house.notableMembers?.includes(c.id));
   const [color1, color2] = house.colors;
+  const houseWithExtras = house as typeof house & { wordsExplanation?: string; arc?: string };
+
+  const isNorth = house.region === "The North";
 
   return (
     <div className="min-h-screen pt-16">
+      {isNorth && <SnowParticles />}
       {/* Hero Banner */}
       <div
         className="relative py-24 px-6 text-center overflow-hidden"
@@ -141,6 +146,26 @@ export default async function HouseDetailPage({ params }: Props) {
           </AnimatedSection>
         )}
 
+        {/* Words Explanation */}
+        {houseWithExtras.wordsExplanation && (
+          <AnimatedSection delay={0.18}>
+            <p className="font-cormorant text-xs tracking-[0.35em] uppercase mb-5" style={{ color: "var(--got-gold)" }}>
+              The Words — Explained
+            </p>
+            <div
+              className="rounded-lg p-6 relative"
+              style={{ background: "var(--got-bg-elevated)", border: "1px solid var(--got-border)" }}
+            >
+              <div className="font-garamond text-5xl leading-none absolute top-4 left-6 select-none" style={{ color: "var(--got-gold)", opacity: 0.08 }}>
+                &ldquo;
+              </div>
+              <p className="font-garamond text-lg italic leading-relaxed pl-8" style={{ color: "var(--got-text-parchment)" }}>
+                {houseWithExtras.wordsExplanation}
+              </p>
+            </div>
+          </AnimatedSection>
+        )}
+
         {/* History */}
         <AnimatedSection delay={0.2}>
           <p className="font-cormorant text-xs tracking-[0.35em] uppercase mb-6" style={{ color: "var(--got-gold)" }}>
@@ -152,6 +177,23 @@ export default async function HouseDetailPage({ params }: Props) {
             </p>
           </div>
         </AnimatedSection>
+
+        {/* Arc */}
+        {houseWithExtras.arc && (
+          <AnimatedSection delay={0.22}>
+            <p className="font-cormorant text-xs tracking-[0.35em] uppercase mb-5" style={{ color: "var(--got-gold)" }}>
+              Arc Across Eight Seasons
+            </p>
+            <div
+              className="rounded-lg p-6"
+              style={{ background: "var(--got-bg-card)", border: "1px solid var(--got-border)", borderLeft: "3px solid var(--got-gold)" }}
+            >
+              <p className="font-garamond text-base leading-[1.85]" style={{ color: "var(--got-text-muted)" }}>
+                {houseWithExtras.arc}
+              </p>
+            </div>
+          </AnimatedSection>
+        )}
 
         {/* Known For */}
         <AnimatedSection delay={0.25}>

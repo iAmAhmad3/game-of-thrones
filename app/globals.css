@@ -196,6 +196,109 @@ body::before {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Snow Particles (Stark / North pages) ────────────────────────── */
+@keyframes snow-fall {
+  0%   { transform: translateY(-10px) translateX(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.7; }
+  100% { transform: translateY(110vh) translateX(var(--snow-drift, 30px)) rotate(360deg); opacity: 0; }
+}
+
+.snow-flake {
+  position: fixed;
+  top: -6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(220, 227, 234, 0.85);
+  pointer-events: none;
+  z-index: 1;
+  animation: snow-fall linear infinite;
+  box-shadow: 0 0 4px rgba(220, 227, 234, 0.6);
+}
+
+/* ── Scroll Progress Bar ─────────────────────────────────────────── */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--got-gold-dim), var(--got-gold), var(--got-gold-bright));
+  opacity: 0.7;
+  z-index: 100;
+  transform-origin: left;
+  transition: transform 0.05s linear;
+  pointer-events: none;
+}
+
+/* ── Button Press Feedback ───────────────────────────────────────── */
+button:active,
+a[role="button"]:active,
+.got-card:active {
+  transform: scale(0.97) !important;
+  transition-duration: 80ms !important;
+}
+
+/* ── Nav Link Underline Hover (CSS only grow from left) ──────────── */
+.nav-link-hover {
+  position: relative;
+}
+.nav-link-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--got-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease-out;
+}
+.nav-link-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Fluid Typography ────────────────────────────────────────────── */
+.fluid-hero-title {
+  font-size: clamp(2.2rem, 8vw, 6rem);
+  letter-spacing: clamp(0.03em, 0.5vw, 0.08em);
+}
+.fluid-hero-subtitle {
+  font-size: clamp(2.8rem, 11vw, 8rem);
+  letter-spacing: clamp(0.02em, 0.4vw, 0.06em);
+}
+.fluid-section-title {
+  font-size: clamp(1.8rem, 6vw, 4rem);
+}
+
+/* ── Reduced Motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Mobile Two-Column Pillars ───────────────────────────────────── */
+@media (max-width: 640px) {
+  .pillar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Landmark Timeline Events ────────────────────────────────────── */
+.timeline-landmark {
+  border-color: rgba(201, 168, 76, 0.6) !important;
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.15), var(--got-shadow-card);
+}
+.timeline-landmark .timeline-dot {
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 12px currentColor;
+}
+
 /* ── Gold Button Variants ────────────────────────────────────────── */
 .gold-btn-outline {
   border: 1px solid var(--got-gold);

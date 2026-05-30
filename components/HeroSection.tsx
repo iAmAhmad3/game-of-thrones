@@ -2,11 +2,30 @@
 
 import { motion } from "framer-motion";
 
-const lines = [
-  { text: "When You Play the", className: "font-cinzel-deco text-4xl md:text-6xl lg:text-7xl font-bold glow-gold-subtle", style: { color: "var(--got-gold)", letterSpacing: "0.08em" } },
-  { text: "Game of Thrones", className: "font-cinzel-deco text-5xl md:text-7xl lg:text-8xl font-black glow-gold", style: { color: "var(--got-gold)", letterSpacing: "0.06em" } },
-  { text: "You Win or You Die", className: "font-garamond text-2xl md:text-3xl italic", style: { color: "var(--got-text-parchment)", opacity: 0.85 } },
-];
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.22,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 36 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" as const } },
+};
+
+const dividerVariant = {
+  hidden: { opacity: 0, scaleX: 0 },
+  show: { opacity: 1, scaleX: 1, transition: { duration: 1.1, delay: 0.1, ease: "easeOut" as const } },
+};
+
+const subtleVariant = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 1.2, delay: 0.2 } },
+};
 
 export function HeroSection() {
   return (
@@ -29,27 +48,44 @@ export function HeroSection() {
         }}
       />
 
-      {/* Main text */}
-      <div className="relative z-10 text-center px-6 flex flex-col items-center gap-6">
-        {lines.map(({ text, className, style }, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 + i * 0.25, ease: [0.22, 1, 0.36, 1] }}
+      {/* Main text - staggered container */}
+      <motion.div
+        className="relative z-10 text-center px-6 flex flex-col items-center gap-5"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={item}>
+          <span
+            className="font-cinzel-deco font-bold glow-gold-subtle fluid-hero-title"
+            style={{ color: "var(--got-gold)", display: "block" }}
           >
-            <span className={className} style={style}>
-              {text}
-            </span>
-          </motion.div>
-        ))}
+            When You Play the
+          </span>
+        </motion.div>
+
+        <motion.div variants={item}>
+          <span
+            className="font-cinzel-deco font-black glow-gold fluid-hero-subtitle"
+            style={{ color: "var(--got-gold)", display: "block" }}
+          >
+            Game of Thrones
+          </span>
+        </motion.div>
+
+        <motion.div variants={item}>
+          <span
+            className="font-garamond text-xl md:text-2xl lg:text-3xl italic"
+            style={{ color: "var(--got-text-parchment)", opacity: 0.85, display: "block" }}
+          >
+            You Win or You Die
+          </span>
+        </motion.div>
 
         {/* Decorative SVG divider */}
         <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="w-full max-w-lg mt-4"
+          variants={dividerVariant}
+          className="w-full max-w-lg mt-2"
         >
           <svg viewBox="0 0 400 40" className="w-full" style={{ color: "var(--got-gold)" }}>
             <line x1="0" y1="20" x2="155" y2="20" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.5" />
@@ -62,15 +98,13 @@ export function HeroSection() {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.6 }}
-          className="font-cormorant text-xs tracking-[0.35em] uppercase mt-2"
+          variants={subtleVariant}
+          className="font-cormorant text-xs tracking-[0.35em] uppercase mt-1"
           style={{ color: "var(--got-text-muted)" }}
         >
           The Complete Encyclopedia of Westeros
         </motion.p>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
@@ -79,10 +113,7 @@ export function HeroSection() {
         transition={{ delay: 2.2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span
-          className="font-cormorant text-[10px] tracking-[0.3em] uppercase"
-          style={{ color: "var(--got-text-dim)" }}
-        >
+        <span className="font-cormorant text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--got-text-dim)" }}>
           Scroll
         </span>
         <motion.div
