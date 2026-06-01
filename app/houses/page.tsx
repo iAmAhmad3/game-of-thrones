@@ -46,8 +46,10 @@ export default function HousesPage() {
                       <p
                         className="font-cormorant text-[10px] tracking-[0.35em] uppercase mb-1"
                         style={{ color: "var(--got-text-dim)" }}
+
                       >
                         {house.region}
+                        
                       </p>
                       <h2
                         className="font-cinzel-deco text-xl font-bold leading-tight"
